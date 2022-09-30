@@ -9,14 +9,14 @@ import {
   Delete,
   UseInterceptors,
   UploadedFile,
-  UseGuards
+  UseGuards,
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { ApiTags } from '@nestjs/swagger';
 import * as fs from 'fs';
 import { ProductService } from './product.service';
 import { JwtAuthGuard } from '../LoginAdmin/jwt.guard';
-
+import * as path from 'path';
 
 @ApiTags('api/products')
 @Controller('api/products')
@@ -51,12 +51,15 @@ export class ProductController {
     @Body('size') size: string,
     @Body('depth') depth: number,
     @Body('status') status: boolean,
-    // @UploadedFile('file') file: Express.Multer.File,
-    @Body('image') image:[],
+    @UploadedFile('file') file: Express.Multer.File,
     @Body('categoryId') categoryId: string,
   ) {
-    // fs.writeFileSync(file.originalname, file.buffer);
-    // const image =   '/assets' + file.originalname
+    const image_path = '/images/' + file.originalname;
+    fs.writeFileSync(
+      path.join(__dirname, '..', '..', '..', 'public', image_path),
+      file.buffer,
+    );
+  
     const postProduct = await this.productService.POST(
       nameRu,
       nameUz,
@@ -68,8 +71,8 @@ export class ProductController {
       size,
       depth,
       status,
-      image,
-      categoryId
+      image_path,
+      categoryId,
     );
     return postProduct;
   }

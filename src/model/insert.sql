@@ -8,15 +8,15 @@ VALUES('Odilbek', 'odil0323', 'admin'),
 
 -- PRODUCTS
 INSERT INTO intex_products( product_name_ru, product_name_uz, product_price_old, product_price_new, product_count, product_frame_ru, product_frame_uz, product_size, product_depth, category_id, product_image)
-VALUES('Металлический каркас', 'Metall ramka', '1.400.000 cym', '1.090.000 cym', 10, 'Металлический', 'Metall', '2,7', 60, 1, ARRAY ['https://devel.prom.uz/upload/product_gallery/9c/2e/9c2e61622598dab77d9e151daf713948.jpg']),
-      ('Металлический каркас', 'Metall ramka', '1.400.000 cym', '1.090.000 cym', 7, 'Металлический', 'Metall', '3,5', 76, 1, ARRAY ['https://devel.prom.uz/upload/product_gallery/9c/2e/9c2e61622598dab77d9e151daf713948.jpg']),
-      ('Рамка призмы', 'Prizma ramka', '1.800.000 cym', '1.520.000 cym', 10, 'Рамка призмы', 'Prizma ramka', '3.05', 76, 1, ARRAY ['https://devel.prom.uz/upload/product_gallery/5f/e4/5fe4f900229457792997d2dd5792c142.jpg']),
-      ('Прямоугольная рама', 'Tortburchaklar ramka', '1.800.000 cym', '1.520.000 cym', 10, 'Прямоугольная', 'Tortburchak', '3.05 x 2.20', 84, 1, ARRAY ['https://devel.prom.uz/upload/product_gallery/cf/82/cf827c31864e781fdff302f459a112a9.jpg']),
-      ('Рамка призмы', 'Prizma ramka', '1.800.000 cym', '1.520.000 cym', 10, 'Рамка призмы', 'Prizma ramka', '3.05', 76, 1, ARRAY ['https://devel.prom.uz/upload/product_gallery/5f/e4/5fe4f900229457792997d2dd5792c142.jpg']),
-      ('Рамка призмы', 'Prizma ramka', '1.800.000 cym', '1.520.000 cym', 10, 'Рамка призмы', 'Prizma ramka', '3.05', 76, 1, ARRAY ['https://devel.prom.uz/upload/product_gallery/5f/e4/5fe4f900229457792997d2dd5792c142.jpg']),
-      ('Прямоугольная рама', 'Tortburchaklar ramka', '1.800.000 cym', '1.520.000 cym', 10, 'Прямоугольная', 'Tortburchak', '2 x 4', 100, 1, ARRAY ['https://devel.prom.uz/upload/product_gallery/7e/d9/7ed98797de215cfbf776071cddaff5e1.jpg']),
-      ('Надувной', 'Puflanadigan', '1.800.000 cym',  '1.520.000 cym', 10, 'Металлический', 'Metall', '3,66', 76, 2, ARRAY ['https://devel.prom.uz/upload/product_gallery/14/a8/14a8ed68b194df7a21bf0b66c4a0f278.jpg']),
-      ('Надувной', 'Puflanadigan', '1.800.000 cym',  '1.520.000 cym', 10, 'Металлический', 'Metall', '3,66', 76, 2, ARRAY ['https://devel.prom.uz/upload/product_gallery/14/a8/14a8ed68b194df7a21bf0b66c4a0f278.jpg']);
+VALUES('Металлический каркас', 'Metall ramka', '1.400.000 cym', '1.090.000 cym', 10, 'Металлический', 'Metall', '2,7', 60, 1, 'https://devel.prom.uz/upload/product_gallery/9c/2e/9c2e61622598dab77d9e151daf713948.jpg'),
+      ('Металлический каркас', 'Metall ramka', '1.400.000 cym', '1.090.000 cym', 7, 'Металлический', 'Metall', '3,5', 76, 1, 'https://devel.prom.uz/upload/product_gallery/9c/2e/9c2e61622598dab77d9e151daf713948.jpg'),
+      ('Рамка призмы', 'Prizma ramka', '1.800.000 cym', '1.520.000 cym', 10, 'Рамка призмы', 'Prizma ramka', '3.05', 76, 1, 'https://devel.prom.uz/upload/product_gallery/5f/e4/5fe4f900229457792997d2dd5792c142.jpg'),
+      ('Прямоугольная рама', 'Tortburchaklar ramka', '1.800.000 cym', '1.520.000 cym', 10, 'Прямоугольная', 'Tortburchak', '3.05 x 2.20', 84, 1, 'https://devel.prom.uz/upload/product_gallery/cf/82/cf827c31864e781fdff302f459a112a9.jpg'),
+      ('Рамка призмы', 'Prizma ramka', '1.800.000 cym', '1.520.000 cym', 10, 'Рамка призмы', 'Prizma ramka', '3.05', 76, 1, 'https://devel.prom.uz/upload/product_gallery/5f/e4/5fe4f900229457792997d2dd5792c142.jpg'),
+      ('Рамка призмы', 'Prizma ramka', '1.800.000 cym', '1.520.000 cym', 10, 'Рамка призмы', 'Prizma ramka', '3.05', 76, 1, 'https://devel.prom.uz/upload/product_gallery/5f/e4/5fe4f900229457792997d2dd5792c142.jpg'),
+      ('Прямоугольная рама', 'Tortburchaklar ramka', '1.800.000 cym', '1.520.000 cym', 10, 'Прямоугольная', 'Tortburchak', '2 x 4', 100, 1,'https://devel.prom.uz/upload/product_gallery/7e/d9/7ed98797de215cfbf776071cddaff5e1.jpg'),
+      ('Надувной', 'Puflanadigan', '1.800.000 cym',  '1.520.000 cym', 10, 'Металлический', 'Metall', '3,66', 76, 2, 'https://devel.prom.uz/upload/product_gallery/14/a8/14a8ed68b194df7a21bf0b66c4a0f278.jpg'),
+      ('Надувной', 'Puflanadigan', '1.800.000 cym',  '1.520.000 cym', 10, 'Металлический', 'Metall', '3,66', 76, 2, 'https://devel.prom.uz/upload/product_gallery/14/a8/14a8ed68b194df7a21bf0b66c4a0f278.jpg');
       
 
 -- CATEGORY

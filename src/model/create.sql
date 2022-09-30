@@ -25,7 +25,7 @@ CREATE TABLE intex_products(
     product_depth int not null,
     product_status boolean default false not null,
     product_date timestamp with time zone not null default current_timestamp,
-    product_image text [],
+    product_image text,
     category_id int,
     FOREIGN KEY (category_id)
     REFERENCES intex_category(category_id)
