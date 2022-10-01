@@ -2,6 +2,7 @@ import { Body, Controller, Delete, Get, HttpException, HttpStatus, UseGuards, Po
 import { ApiTags } from "@nestjs/swagger";
 import { OrdersService } from "./orders.service";
 import { JwtAuthGuard } from "../LoginAdmin/jwt.guard";
+import { OrderDto } from "./dto/orders.dto";
 
 @ApiTags('api/orders')
 @Controller('api/orders')
@@ -22,12 +23,9 @@ export class OrdersController {
 
     @Post()
     async PostOrder(
-        @Body('productId') productId:number,
-        @Body('userName') userName:string,
-        @Body('userPhone') userPhone:string,
-        @Body('userAddress') userAddress:string
+        @Body() OrderDto:OrderDto
     ){
-        const addOrder = await this.ordersService.POST(productId, userName, userPhone, userAddress)
+        const addOrder = await this.ordersService.POST(OrderDto.productId, OrderDto.userName, OrderDto.userPhone, OrderDto.userAddress)
 
         return addOrder
     }

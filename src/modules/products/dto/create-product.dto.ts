@@ -1,5 +1,4 @@
-import { IsString, IsNumber, IsBoolean, IsArray } from "class-validator";
-
+import { IsString, IsNumber, IsBoolean } from "class-validator";
 
 export class CreateProductDto {
     @IsString()
@@ -32,8 +31,8 @@ export class CreateProductDto {
     @IsBoolean()
     status:boolean;
 
-    @IsArray()
-    image:[];
+    @IsString()
+    image_path:string;
 
     @IsString()
     categoryId:string;

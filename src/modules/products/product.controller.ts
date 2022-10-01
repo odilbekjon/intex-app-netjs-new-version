@@ -17,6 +17,7 @@ import * as fs from 'fs';
 import { ProductService } from './product.service';
 import { JwtAuthGuard } from '../LoginAdmin/jwt.guard';
 import * as path from 'path';
+import { CreateProductDto } from './dto/create-product.dto'; 
 
 @ApiTags('api/products')
 @Controller('api/products')
@@ -91,6 +92,7 @@ export class ProductController {
     @Body('size') size: string,
     @Body('depth') depth: number,
     @Body('status') status: boolean,
+    @Body('image') image:string,
     @Body('categoryId') categoryId: string,
     @Body('productId') productId: number,
   ) {
@@ -105,6 +107,7 @@ export class ProductController {
       size,
       depth,
       status,
+      image,
       categoryId,
       productId,
     );

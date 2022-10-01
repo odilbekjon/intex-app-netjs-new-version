@@ -39,7 +39,7 @@ export class ProductService {
         }
     }
 
-    async PUT(nameRu,nameUz, oldPrice, newPrice, count, frameRu,frameUz, size, depth, status, categoryId, productId:number) {
+    async PUT(nameRu,nameUz, oldPrice, newPrice, count, frameRu,frameUz, size, depth, status, image, categoryId, productId:number) {
 
         const UpdateProduct = await this.knex('intex_products').where('product_id', productId).update({
             product_name_ru:nameRu,
@@ -52,6 +52,7 @@ export class ProductService {
             product_size:size,
             product_depth:depth,
             product_status:status,
+            product_image:image,
             category_id:categoryId
         })    
 

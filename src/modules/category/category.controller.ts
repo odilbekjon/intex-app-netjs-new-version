@@ -12,6 +12,7 @@ import {
 import { ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from '../LoginAdmin/jwt.guard';
 import { CategoryService } from './category.service';
+import { CategoryDto } from './dto/category.dto';
 
 @ApiTags('api/categories')
 @Controller('api/categories')
@@ -35,10 +36,9 @@ export class CategoryController {
   @UseGuards(JwtAuthGuard)
   @Post()
   async AddCategory(
-    @Body('nameRu') nameRu: string,
-    @Body('nameUz') nameUz: string,
+    @Body() CategoryDto:CategoryDto
   ) {
-    const post = await this.categoryService.POST(nameRu, nameUz);
+    const post = await this.categoryService.POST(CategoryDto.nameRu, CategoryDto.nameUz);
 
     return post;
   }
@@ -47,11 +47,9 @@ export class CategoryController {
   @Put()
   @UseGuards(JwtAuthGuard)
   UpdateCategory(
-    @Body('nameRu') nameRu: string,
-    @Body('nameUz') nameUz: string,
-    @Body('catId') catId: string,
+    @Body() CategoryDto:CategoryDto
   ) {
-    const update = this.categoryService.PUT(nameRu, nameUz, catId);
+    const update = this.categoryService.PUT(CategoryDto.nameRu, CategoryDto.nameUz, CategoryDto.catId);
 
     return update;
   }

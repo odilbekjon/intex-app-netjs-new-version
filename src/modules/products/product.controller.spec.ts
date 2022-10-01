@@ -11,7 +11,12 @@ describe('ProductController', () => {
                 id:Date.now(),
                 ...dto
             }
-        })
+        }),
+
+        update: jest.fn().mockImplementation((id,dto) => ({
+            id,
+            ...dto
+        }))
     }
 
     beforeEach(async () => {
@@ -41,9 +46,28 @@ describe('ProductController', () => {
                 size:'test size',
                 depth:8,
                 status:true,
-                image:[],
-                categoryId:'2'
+                image:'',
+                categoryId:2
             });
+
+            expect(mockProductService.AddProduct).toHaveBeenCalled();
         });
+
+        it('should update a user', () => {
+            expect(controller.UpdateProduct).toEqual({
+                nameRu:'test',
+                nameUz:'test',
+                oldPrice:'test',
+                newPrice:'test',
+                count:5,
+                frameRu:'test',
+                frameUz:'test',
+                size:'test',
+                depth:5,
+                status:true,
+                categoryId:'1',
+                productId:1,
+            })
+        })
     });
 });

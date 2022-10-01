@@ -47,3 +47,6 @@ INSERT INTO intex_cite(cite_phone, cite_address_ru, cite_address_uz, cite_time_r
 VALUES('(998) 99 911 02 04', 'Улица Пахлавона Махмуда, Яшнабадский район, город Ташкент','Toshkent shahri, Yashnobod tumani, Paxlavon Mahmud kochasi', 
 'Будние дни: 10:00 - 22:00 Без выходных','Ish kunlari: 10:00 - 22:00 Dam olish kunlarisiz', 'https://www.telegram.com/intex-market_uz/', 
 'https://www.instagram.com/intex-market_uz/');
+
+INSERT INTO intex_zakas(zakas_client, zakas_address, zakas_cl_phone, product_id)
+VALUES('usmonbek', 'sherobod', '998915716987', 1); 

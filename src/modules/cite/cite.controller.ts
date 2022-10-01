@@ -2,6 +2,7 @@ import { Body, Controller, Get, HttpException, HttpStatus, Put, UseGuards } from
 import { ApiTags } from "@nestjs/swagger";
 import { CiteService } from "./cite.service";
 import { JwtAuthGuard } from "../LoginAdmin/jwt.guard";
+import { CiteDto } from "./dto/cite.dto";
 
 @ApiTags('api/cite')
 @Controller('api/cite')
@@ -25,16 +26,9 @@ export class CiteController {
   @UseGuards(JwtAuthGuard)
     @Put()
     async UpdateCite(
-        @Body('phone') phone:string,
-        @Body('addressRu') addressRu:string,
-        @Body('addressUz') addressUz:string,
-        @Body('timeRu') timeRu:string,
-        @Body('timeUz') timeUz: string,
-        @Body('telegram') telegram:string,
-        @Body('instagram') instagram:string,
-        @Body('citeId') citeId:number
+        @Body() CiteDto:CiteDto
     ) {
-        const putCite = await this.citeService.PUT(phone,addressRu,addressUz,timeRu,timeUz,telegram,instagram,citeId)
+        const putCite = await this.citeService.PUT(CiteDto.phone,CiteDto.addressRu,CiteDto.addressUz,CiteDto.timeRu,CiteDto.timeUz,CiteDto.telegram,CiteDto.instagram,CiteDto.citeId)
 
         return putCite
       
